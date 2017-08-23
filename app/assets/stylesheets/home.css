@@ -1,0 +1,16 @@
+
+
+#intro {
+
+
+    height: 100%;
+    color: #fff;
+    background: url("/assets/main.jpg") no-repeat center center/cover scroll;
+}
+.inner{
+    text-align: center;
+}
+#b1{
+     background-color: rgba( 255, 255, 255, 0.5 );
+    color: white;
+}

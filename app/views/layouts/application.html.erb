@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>무릉가족펜션</title>
+
+  
+  <!-- favicons -->
+  <%= favicon_link_tag 'favicon.ico' %>
+  <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<%= asset_path 'favicon2.png' %>">
+  <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<%= asset_path 'favicon3.png' %>">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+  <header>
+
+    <div class="nav_bar">
+     <nav class="navbar navbar-toggleable-md navbar-light bg-faded" style="padding: .5rem 3rem">
+
+    
+      <div class="collapse navbar-collapse" >
+   
+         <div class="d-flex flex-row-reverse" style="width:100%">
+              <ul class="nav nav-pills">
+                <% if user_signed_in? %>
+                  <li class="nav-item">
+                      <%= current_user.email %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to '로그아웃', destroy_user_session_path, class: 'nav-link', method: 'delete' %>
+                  </li>
+                <% else %>
+                  <li class="nav-item">
+                    <%= link_to '로그인', new_user_session_path, class: 'nav-link' %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to '회원가입', new_user_registration_path, class: 'nav-link' %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+      </div>
+    </nav>
+</div>
+    <div class="page-header">
+      <div class="row">  
+        <div class="col-md-12" style="text-align:center">
+          <img src="http://mrfamily.kr/files/attach/images/264/7d400ff5902c6cbf85521ba6a838e811.jpg"></img>
+         
+        </div>
+     <!--
+      <div class="col-md-4" style="text-align:left">  
+          <p >전화번호 010-0000-0000</p>
+          <p >계좌번호 0000-000-00000 우리은행</p>
+  
+      </div>
+  -->
+      </div>
+    </div>
+    
+     <div class="nav_bar">
+     <nav class="navbar navbar-toggleable-md navbar-light bg-faded" style="padding: 3.5rem 3rem">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          
+          <ul class="navbar-nav mr-auto" style="width:100%" id="nav_title">
+              <a class="navbar-brand" href="/home">무릉가족펜션</a>
+              <li class="nav-item active">
+                <a class="nav-link" href="/introduce">펜션소개</a>
+              </li>
+              <div class="dropdown">
+                <li class="nav-item active">
+                    
+                      <a class="nav-link" href="/room" data-toggle="dropdown" id="dLabel" aria-haspopup="true" aria-expanded="false">객실정보</a>
+                        <ul class="dropdown-menu" aria-labelledby="dLabel">
+                          <div style="text-align:center; color:black" >
+                            <li><a href="/room/room1">방1</a></li>
+                            <li><a href="/room/room2">방2</a></li>
+                            <li><a href="/room/room3">방3</a></li>
+                            <li><a href="/room/room4">방4</a></li>
+                          </div>
+                        </ul>
+                   
+                 </li>
+              </div>
+                  
+            <li class="nav-item active">
+              <a class="nav-link" href="/posts">추억만들기</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link "  id="yeyak" href="http://tranquil-atoll-90616.herokuapp.com/meetings">예약문의</a>
+            </li>
+        </ul>
+        
+      </div>
+    </nav>
+</div>
+
+
+  </header>
+<body>
+  
+  
+  
+  <div class="jumbotron">
+  <div class="img"></div>
+  <div class="inner">
+    <h1>펜션</h1>
+    <p>펜션에 오신것을 환영합니다.</p>
+  </div>
+</div>
+
+  <%= yield %>
+
+
+</body>
+
+<footer>
+  <div class="foot">
+    <p>무릉가족펜션</p>
+    <p>@copyright 이승규</p>
+  </div>  
+</footer>
+</html>

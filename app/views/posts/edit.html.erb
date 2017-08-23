@@ -1,0 +1,35 @@
+<div class="container">
+  <h2>게시판</h2>
+  <hr>
+  <%= form_for(@post) do |f| %>
+    <div class="form-group">
+      <%= f.label :제목 %>
+      <br>
+      <%= f.text_field :title %>
+    </div>
+    <div class="form-group">
+        <% if @post.avatar.exists? %>
+            <div class="row" style="margin: 30px;">
+                <img src="<%= @post.avatar.url %>" class="col-md-12 text-center">
+            </div>
+        <% end %>
+   
+    <div>
+      <%= tinymce %>
+      <%= f.label :내용 %>
+      <br>
+      <%= f.text_area :content, class: "form-control tinymce" %>
+    </div>
+      <% f.file_field :picture %>
+  
+    
+    <div class="form-group row">
+      <input type="file" name="avatar" class="form-control">
+    </div>
+    
+    <div>
+      <%= f.submit '수정하기' %>
+    </div>
+   </div>
+  <% end %>
+</div>

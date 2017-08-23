@@ -1,0 +1,54 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.card-options {
+  display: flex;
+  justify-content: flex-end;
+}
+
+form .actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;   
+}
+
+
+.pagination {
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.pagination > * {
+    margin-right: 0.1em;
+    padding: 0.3em 0.4em;
+}
+
+.pagination a:hover {
+}
+
+.pagination a:active {
+    text-shadow: none;
+}
+
+.pagination .current {
+}
+
+.pagination .disabled {
+    color: #C0C0C0;
+}
+.thumbnail{
+    text-align: center;
+    margin-bottom :2rem;
+}
+.image_field{
+    width: 18rem;
+    height: 15rem;
+}
+.form-control{
+    margin: .8rem .8rem;
+}
+.dropdown-menu{
+ left:1;
+}
