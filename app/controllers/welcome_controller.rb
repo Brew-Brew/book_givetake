@@ -8,4 +8,6 @@ class WelcomeController < ApplicationController
           format.js  
           end
   end
+  def reserve
+  end
 end

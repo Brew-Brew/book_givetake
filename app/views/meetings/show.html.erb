@@ -1,0 +1,34 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  
+  <p>
+    <strong>예약자 이름:</strong>
+    <%= @meeting.name %>
+  </p>
+  
+  <p>
+    <strong>방이름:</strong>
+    <%= @meeting.room %>
+  </p>
+  
+  <p>
+    <strong>메모내용:</strong>
+    <%= @meeting.memo %>
+  </p>
+  <p>
+    <strong>숙박일수:</strong>
+    <%= @meeting.term %>
+  </p>
+  <p>
+    <strong>예약시작일:</strong>
+    <%= @meeting.start_time.month %>월 <%= @meeting.start_time.day %>일
+  </p>
+  
+  <p>
+    <strong>예약 종료일: :</strong>
+    <%= @meeting.end_time.month %>월 <%= @meeting.end_time.day + 1 %>일
+  </p>
+  
+  <%= link_to '수정하기', edit_meeting_path(@meeting) %> |
+  <%= link_to '뒤로가기', meetings_path %>
+</div>

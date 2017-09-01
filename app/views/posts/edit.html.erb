@@ -8,11 +8,6 @@
       <%= f.text_field :title %>
     </div>
     <div class="form-group">
-        <% if @post.avatar.exists? %>
-            <div class="row" style="margin: 30px;">
-                <img src="<%= @post.avatar.url %>" class="col-md-12 text-center">
-            </div>
-        <% end %>
    
     <div>
       <%= tinymce %>

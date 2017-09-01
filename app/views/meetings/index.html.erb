@@ -1,0 +1,78 @@
+<div class="container">
+  <h1>예약 현황</h1>
+  <div>
+    <%= month_calendar events: @meetings do |date, reservations| %>
+          
+          
+        <%= date %>
+    
+        <% reservations.each do |reserve| %>
+            <div>
+              
+              <%if user_signed_in? %>
+              <strong><%= link_to reserve.name ,reserve %>님 </strong>
+              <%else %>
+              <strong><%= reserve.name %>님 </strong>
+              <%end %>
+            </div>
+        <% end %>
+    <% end %>
+  
+    <p id="notice"><%= notice %></p>
+    
+    
+    
+   <%if user_signed_in? %> 
+    <h1>예약 관리</h1>
+    
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <% if @meetings.exists? %>
+          
+            <th>예약자 이름</th>
+            <th>방이름</th>
+            <th>숙박일수</th>
+            <th>예약 시작</th>
+            <th>예약 끝</th>
+            <th >메모내용</th>
+      
+            <div style="display :flex justify-content :center">
+            <th colspan="3" >예약관리</th>
+            </div>
+          <% else %>
+            <p>아직 만들어진 예약이 없습니다.</p> 
+          <% end %>
+     
+        </tr>
+      </thead>
+    
+      <tbody>
+        
+        <% @meeting.each do |meeting| %>
+          <tr>
+  
+            <td><%= meeting.name %></td>
+            <td><%= meeting.room %></td>
+            <td><%= meeting.term %></th>
+            <td><%= meeting.start_time.month %>월<%= meeting.start_time.day %>일 </td>
+            <td><%= meeting.end_time.month %>월<%= meeting.end_time.day + 1 %>일 </td>
+            <td><%= meeting.memo %></td>
+            
+            <td><%= link_to '예약보기', meeting %></td>
+            <td><%= link_to '예약편집', edit_meeting_path(meeting) %></td>
+            <td><%= link_to '예약삭제', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+      
+      
+    </table>
+    <%= will_paginate @meeting %>
+    <br>
+    <%= button_to '예약 작성하러가기', new_meeting_path,:class =>"btn btn-primary btn-lg active",:method => :get %>
+  </div>
+  <%else%>
+  
+  <%end %>
+</div>

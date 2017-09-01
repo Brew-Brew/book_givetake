@@ -1,0 +1,41 @@
+<%= form_for(@meeting) do |f| %>
+  <% if @meeting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@meeting.errors.count, "error") %> prohibited this meeting from being saved:</h2>
+
+      <ul>
+      <% @meeting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+   <%= f.label :예약자이름%><br>
+   <%= f.text_field :name %>
+  </div>
+  
+   <div class="field">
+   <%=f.label :방이름%><br>
+   <%= f.select :room, options_for_rooms, {}, prompt: 'Select One' %>
+  </div>
+  
+  <div class="field">
+   <%=f.label :숙박일수%><br>
+   <%= f.select :term, options_for_terms, {}, prompt: 'Select One' %>
+  </div>
+  
+   <div class="field">
+    <%= f.label :메모사항 %><br>
+    <%= f.text_field :memo %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :시작일 %><br>
+    <%= f.datetime_select :start_time, :discard_hour => true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit '제출하기'%>
+  </div>
+<% end %>

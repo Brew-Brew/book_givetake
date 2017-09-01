@@ -39,7 +39,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.new(post_params)
+  
     @post.user=current_user
     
     if params[:avatar]
@@ -81,5 +81,7 @@ class PostsController < ApplicationController
       redirect_to :back
     end
   end
+  
+
 end
 

@@ -1,4 +1,10 @@
 source 'https://rubygems.org'
+
+gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
+gem 'fog'
+gem "simple_calendar", "~> 2.0"
+gem 'carrierwave', '~> 1.0'
+gem 'rails_db'
 gem 'tinymce-rails'
 gem 'devise' # 회원
 gem "paperclip", "~> 5.0.0" #이미지 첨부

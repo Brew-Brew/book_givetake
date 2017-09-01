@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  
+  resources :meetings
+  post '/tinymce_assets' => 'tinymce_assets#create'
+  
+  get 'introduce/facility'
+
+  get 'introduce/scenery'
+
+  get 'introduce/food'
+
+  #예약
+  get 'welcome/reserve'
+
+  
   #객실정보
   get 'room/room1'
   get 'room/room2'

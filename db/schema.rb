@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170717124912) do
+ActiveRecord::Schema.define(version: 20170901123540) do
+
+  create_table "images", force: :cascade do |t|
+    t.string   "alt"
+    t.string   "hint"
+    t.string   "file"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "meetings", force: :cascade do |t|
+    t.string   "name"
+    t.string   "memo"
+    t.string   "room"
+    t.string   "term"
+    t.datetime "start_time"
+    t.datetime "end_time",   default: '2017-09-01 12:44:48'
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"

@@ -5,12 +5,8 @@
     <hr>
     <p><%= @post.title %></p>
     
-        <% if @post.avatar.exists? %>
-            <div class="row" style="margin: 30px;">
-                <img src="<%= @post.avatar.url %>" class="col-md-12 text-center">
-            </div>
-        <% end %>
-    <p><%= @post.content.html_safe %></p>
+    <p><%= content_tag(:div, @post.content.html_safe, :class => "panel-body") %><p>
+   
     <p><%= link_to '돌아가기', :posts %></p>
     <p><%= link_to '수정하기', edit_post_path(@post) %></p>
 </div>
