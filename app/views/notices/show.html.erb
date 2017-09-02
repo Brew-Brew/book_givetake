@@ -1,0 +1,12 @@
+
+
+<div class="container">
+    <h2>Posts#show</h2>
+    <hr>
+    <p><%= @post.title %></p>
+    
+    <p><%= content_tag(:div, @post.content.html_safe, :class => "panel-body") %><p>
+   
+    <p><%= link_to '돌아가기', :notices %></p>
+    <p><%= link_to '수정하기', edit_notice_path(@post) %></p>
+</div>

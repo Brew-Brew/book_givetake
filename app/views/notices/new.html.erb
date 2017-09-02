@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>새 글 작성</h2>
+  <hr>
+  <%= form_for(@post) do |f| %>
+  
+    <div class="form-group">
+     
+      <%= f.label :글제목 %>
+      <%= f.text_field :title %>
+    </div>
+  
+    <div>
+      <%= tinymce %>
+      <%= f.label :내용 %>
+      <%= f.text_area :content, class: "form-control tinymce" %>
+    </div>
+    
+    <div>
+      <% f.file_field :picture %>
+    </div>
+    <h5><strong>대표 이미지</strong><h5>
+    <div class="form-group row">
+      <input type="file" name="avatar" class="form-control">
+    </div>
+
+    <div>
+      <%= f.submit '제출하기' %>
+    </div>
+  <% end %>
+</div>
