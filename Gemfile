@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'aws-sdk', '~> 2.3'
+gem 'aws-sdk', '< 2.0'
 gem 'aws-sdk-v1'
 gem "figaro"
 gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'

@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20170901151823) do
     t.string   "room"
     t.string   "term"
     t.datetime "start_time"
-    t.datetime "end_time",   default: '2017-09-01 12:44:48'
+    t.datetime "end_time",   default: '2017-09-15 13:23:10'
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
   end
