@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem "figaro"
 gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 gem 'fog'
 gem "simple_calendar", "~> 2.0"
